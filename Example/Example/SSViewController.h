@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SSIndicatorLabel.h"
 @interface SSViewController : UIViewController
-@property(nonatomic,retain) SSIndicatorLabel *indicatorLabel;
+@property(nonatomic,retain) IBOutlet SSIndicatorLabel *indicatorLabel;
 - (IBAction)startLoading:(id)sender;
 @end

@@ -23,7 +23,6 @@
 {
     [super viewDidLoad];
 	
-    self.indicatorLabel = [[[SSIndicatorLabel alloc] initWithFrame:CGRectMake(0, 0, 200, 20)] autorelease];
     self.indicatorLabel.backgroundColor = self.view.backgroundColor;
     self.indicatorLabel.textLabel.textColor = [UIColor whiteColor];
     self.indicatorLabel.center = CGPointMake(160, 240);
