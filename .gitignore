@@ -1,0 +1,5 @@
+*~.nib/ 
+*.pbxuser 
+.xcuserdatad
+xcuserdata/ 
+.DS_Store

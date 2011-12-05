@@ -11,6 +11,7 @@
 @interface SSIndicatorLabel (PrivateMethods)
 + (CGSize)indicatorSize;
 + (CGFloat)padding;
+- (void)configureView;
 @end
 
 @implementation SSIndicatorLabel
@@ -59,21 +60,31 @@
 
 - (id)initWithFrame:(CGRect)rect {
 	if ((self = [super initWithFrame:rect])) {
-		self.clipsToBounds = YES;
-		
-		_textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-		[self addSubview:_textLabel];
-		
-		_activityIndicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectZero];
-		[_activityIndicatorView startAnimating];
-		[self addSubview:_activityIndicatorView];
-		
-		_loading = NO;
-		[self layoutSubviews];
+        [self configureView];
 	}
 	return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if ((self = [super initWithCoder:aDecoder])) {
+        [self configureView];
+    }
+    return self;
+}
+
+- (void)configureView {
+    self.clipsToBounds = YES;
+
+    _textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    [self addSubview:_textLabel];
+
+    _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectZero];
+    [_activityIndicatorView startAnimating];
+    [self addSubview:_activityIndicatorView];
+
+    _loading = NO;
+    [self layoutSubviews];
+}
 
 - (void)layoutSubviews {
 	CGRect rect = self.frame;
